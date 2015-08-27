@@ -1,0 +1,14 @@
+{
+  "name": "whois",
+  "version": "0.0.1",
+  "description": "mix implementation of php-whois and node-simplewhois",
+  "main": "index.js",
+  "keywords": [
+    "node", "domain", "whois"
+  ],
+  "dependencies": {
+    "net" : "*"
+  }
+}
+
+
