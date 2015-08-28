@@ -2,31 +2,6 @@ var servers = require('./lib/whois.servers.json');
 var net = require('net');
 var WhoIs = function(){};
 
-WhoIs.prototype.stream = function(){
-    var stream = net.createConnection(this.options.port, this.options.hostname);
-    stream.addListener('connect', function() {
-        stream.write(domain + '\r\n');
-    });
-
-    stream.addListener('data', function(data) {
-        callback(null, data);
-    });
-
-    stream.addListener('error', function(err) {
-        callback(err, null);
-    });
-
-    stream.addListener('error', function(data) {
-        callback(data);
-    });
-
-    stream.addListener('end', function() {
-        stream.end();
-    });
-
-    return this;
-};
-
 
 WhoIs.prototype.request = function(options,cb){
 
